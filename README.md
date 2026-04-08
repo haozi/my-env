@@ -28,7 +28,7 @@ git clone https://github.com/haozi/my-env.git "$HOME/my-env" && cd "$HOME/my-env
 把下面这行直接丢给 AI 即可：
 
 ```text
-Run `curl -fsSL https://raw.githubusercontent.com/haozi/my-env/main/scripts/bootstrap.sh | bash` on this machine, detect whether the environment is macOS, Linux, or WSL, skip platform-specific software that does not apply, and report any remaining manual GUI steps.
+Fetch and run the bootstrap script from github.com/haozi/my-env on this machine, detect whether the environment is macOS, Linux, or WSL, install only the software that applies to the current platform, and summarize any remaining manual GUI steps.
 ```
 
 ## 仓库内容
