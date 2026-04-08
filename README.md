@@ -11,16 +11,16 @@
 
 ## 一行执行
 
-如果当前机器已经登录 GitHub，并且可以访问这个私有仓库，直接执行：
+不依赖 `gh`，直接执行：
 
 ```bash
-gh repo clone haozi/my-env "$HOME/my-env" && cd "$HOME/my-env" && bash scripts/bootstrap.sh
+curl -fsSL https://raw.githubusercontent.com/haozi/my-env/main/scripts/bootstrap.sh | bash
 ```
 
-如果仓库已经在本地：
+如果你想先把仓库拉到本地再执行：
 
 ```bash
-cd /path/to/my-env && bash scripts/bootstrap.sh
+git clone https://github.com/haozi/my-env.git "$HOME/my-env" && cd "$HOME/my-env" && bash scripts/bootstrap.sh
 ```
 
 ## 一行 AI 任务
@@ -28,7 +28,7 @@ cd /path/to/my-env && bash scripts/bootstrap.sh
 把下面这行直接丢给 AI 即可：
 
 ```text
-Clone the private repo haozi/my-env, run scripts/bootstrap.sh on this machine, detect whether the environment is macOS, Linux, or WSL, skip platform-specific software that does not apply, and report any remaining manual GUI steps.
+Run `curl -fsSL https://raw.githubusercontent.com/haozi/my-env/main/scripts/bootstrap.sh | bash` on this machine, detect whether the environment is macOS, Linux, or WSL, skip platform-specific software that does not apply, and report any remaining manual GUI steps.
 ```
 
 ## 仓库内容
@@ -95,13 +95,13 @@ Clone the private repo haozi/my-env, run scripts/bootstrap.sh on this machine, d
 
 ## 推荐流程
 
-1. 在目标机器上先确保有 `git` 和 `gh`
+1. 在目标机器上先确保有 `curl`
 2. 执行上面的“一行执行”
 3. 根据脚本输出完成剩余人工步骤
 4. 重启 shell
 
 ## 注意
 
-- 私有仓库推荐先执行 `gh auth login`
+- 如果你选择 `git clone` 方式，需要机器上已有 `git`
 - `bootstrap.sh` 会按平台分流，不会在 Linux / WSL 上安装 `brew`
 - `Flutter`、`Android`、`CocoaPods` 只在 macOS 路径下默认启用
