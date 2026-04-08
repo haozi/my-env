@@ -1,0 +1,13 @@
+[alias]
+  co = checkout
+  br = branch
+  ci = commit
+  st = status
+[user]
+  name = haozi
+  email = syntaxright@gmail.com
+  signingkey = REPLACE_WITH_YOUR_GPG_KEY_ID
+[commit]
+  gpgsign = true
+[gpg]
+  program = gpg
