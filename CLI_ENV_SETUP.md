@@ -23,7 +23,7 @@ bash scripts/bootstrap.sh
 如果要让 AI 执行，推荐的任务描述是：
 
 ```text
-Fetch and run the bootstrap script from github.com/haozi/my-env on this machine, detect whether the environment is macOS, Linux, or WSL, install only the software that applies to the current platform, and summarize any remaining manual GUI steps.
+Clone github.com/haozi/my-env into ~/.haozi-my-env, run scripts/bootstrap.sh there, detect whether the environment is macOS, Linux, or WSL, install only the software that applies to the current platform, summarize any remaining manual GUI steps, and delete ~/.haozi-my-env after the task is complete.
 ```
 
 ## 3. 通用安装项

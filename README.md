@@ -20,7 +20,7 @@ curl -fsSL https://raw.githubusercontent.com/haozi/my-env/main/scripts/bootstrap
 如果你想先把仓库拉到本地再执行：
 
 ```bash
-git clone https://github.com/haozi/my-env.git "$HOME/my-env" && cd "$HOME/my-env" && bash scripts/bootstrap.sh
+rm -rf "$HOME/.haozi-my-env" && git clone https://github.com/haozi/my-env.git "$HOME/.haozi-my-env" && cd "$HOME/.haozi-my-env" && bash scripts/bootstrap.sh
 ```
 
 ## 一行 AI 任务
@@ -28,7 +28,7 @@ git clone https://github.com/haozi/my-env.git "$HOME/my-env" && cd "$HOME/my-env
 把下面这行直接丢给 AI 即可：
 
 ```text
-Fetch and run the bootstrap script from github.com/haozi/my-env on this machine, detect whether the environment is macOS, Linux, or WSL, install only the software that applies to the current platform, and summarize any remaining manual GUI steps.
+Clone github.com/haozi/my-env into ~/.haozi-my-env, run scripts/bootstrap.sh there, detect whether the environment is macOS, Linux, or WSL, install only the software that applies to the current platform, summarize any remaining manual GUI steps, and delete ~/.haozi-my-env after the task is complete.
 ```
 
 ## 仓库内容
@@ -103,5 +103,6 @@ Fetch and run the bootstrap script from github.com/haozi/my-env on this machine,
 ## 注意
 
 - 如果你选择 `git clone` 方式，需要机器上已有 `git`
+- `~/.haozi-my-env` 约定为 AI 执行时使用的临时仓库目录，用完删除
 - `bootstrap.sh` 会按平台分流，不会在 Linux / WSL 上安装 `brew`
 - `Flutter`、`Android`、`CocoaPods` 只在 macOS 路径下默认启用
